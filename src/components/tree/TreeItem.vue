@@ -1,19 +1,18 @@
 <template>
     <div :class="`anfo-tree-item ${isCurrent?'is-current':''}`" @click.stop="$emit('item-click', item, toggleExpand)">
-        <slot v-bind="{layer, isCurrent, isExpand, isParent, ...item, toggleExpand}"></slot>
+        <slot v-bind="{item: {layer, isCurrent, isExpand, isParent, ...item, toggleExpand}, index}"></slot>
         <collapse-transition>
             <Tree @expand="handleExpand" :layer="layer+1" v-show="isExpand" :keyPropName="keyPropName" :current="current" :data="item[childrenPropName]" :children-prop-name="childrenPropName" @item-click="$emit('item-click', arguments[0], arguments[1])">
-                <slot v-bind="da" slot-scope="da"></slot>
+                <slot v-bind="{da, index}" slot-scope="{da, index}"></slot>
             </Tree>
         </collapse-transition>
     </div>
 </template>
 <script>
-import Tree from './Tree';
-
 export default {
     beforeCreate(){
         //注册components，边界情况
+        //eslint-disable-next-line
         this.$options.components.Tree = require('./Tree.vue').default;
     },
     created(){
@@ -73,6 +72,7 @@ export default {
         }
     },
     props:{
+        index: Number,
         item:{
             type: Object,
             default: ()=>({})

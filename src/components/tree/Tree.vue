@@ -7,6 +7,7 @@
             ref="treeItem"
             v-for="(item, index) in data"
             :key="index"
+            :index="index"
             :default-expand="defaultExpandAll"
             :layer="layer"
             @item-click="$emit('item-click', arguments[0], arguments[1])"

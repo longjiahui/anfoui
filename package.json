@@ -1,6 +1,6 @@
 {
-  "name": "anfotree",
-  "version": "1.0.8",
+  "name": "anfoui",
+  "version": "2.0.0",
   "description": "",
   "main": "dist/anfotree.umd.js",
   "files": [
@@ -9,11 +9,14 @@
   "scripts": {
     "build": "vue build -t lib -n anfotree src/index.js"
   },
-  "keywords": ["tree", "vue", "component"],
+  "keywords": [
+    "tree",
+    "vue",
+    "component"
+  ],
   "author": "Anfo",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "less": "^3.10.3",
     "less-loader": "^5.0.0",

@@ -2,7 +2,7 @@
     <div :class="`anfo-tree-item ${isCurrent?'is-current':''}`" @click.stop="$emit('item-click', item, toggleExpand)">
         <slot v-bind="{item: {layer, isCurrent, isExpand, isParent, ...item, toggleExpand}, index}"></slot>
         <collapse-transition>
-            <Tree @expand="handleExpand" :layer="layer+1" v-show="isExpand" :keyPropName="keyPropName" :current="current" :data="item[childrenPropName]" :children-prop-name="childrenPropName" @item-click="$emit('item-click', arguments[0], arguments[1])">
+            <Tree :default-expand="defaultExpand" @expand="handleExpand" :layer="layer+1" v-show="isExpand" :keyPropName="keyPropName" :current="current" :data="item[childrenPropName]" :children-prop-name="childrenPropName" @item-click="$emit('item-click', arguments[0], arguments[1])">
                 <slot v-bind="{item, index}" slot-scope="{item, index}"></slot>
             </Tree>
         </collapse-transition>

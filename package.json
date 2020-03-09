@@ -1,8 +1,8 @@
 {
   "name": "anfoui",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "",
-  "main": "dist/anfotree.umd.js",
+  "main": "dist/anfoui.umd.js",
   "files": [
     "dist/*"
   ],

@@ -7,7 +7,7 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "vue build -t lib -n anfotree src/index.js"
+    "build": "vue build -t lib -n anfoui src/index.js"
   },
   "keywords": [
     "tree",
